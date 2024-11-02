@@ -71,8 +71,7 @@ credentials:
 security:
   scriptApproval:
     approvedSignatures:
-    - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object\
-      \ java.lang.String java.lang.Object"
+    - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object\ java.lang.String java.lang.Object"
 
 unclassified:
   globalLibraries:
