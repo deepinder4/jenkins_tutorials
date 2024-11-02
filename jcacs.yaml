@@ -14,26 +14,26 @@ jenkins:
           permissions:
           - "Overall/Administer"
 
-  globalNodeProperties:
-  - envVars:
-      env:
-      - key: "ProductVersion"
-        value: "1.1"
+  # globalNodeProperties:
+  # - envVars:
+  #     env:
+  #     - key: "ProductVersion"
+  #       value: "1.1"
 
-  nodes:
-  - permanent:
-      labelString: "test-agent"
-      launcher:
-        ssh:
-          credentialsId: "linux-agent"
-          host: "test.agent.com"
-          port: 22
-          sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
-      name: "test"
-      nodeDescription: "Test agent for Jenkins"
-      numExecutors: 5
-      remoteFS: "/tmp/jenkins"
-      retentionStrategy: "always"
+  # nodes:
+  # - permanent:
+  #     labelString: "test-agent"
+  #     launcher:
+  #       ssh:
+  #         credentialsId: "linux-agent"
+  #         host: "test.agent.com"
+  #         port: 22
+  #         sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+  #     name: "test"
+  #     nodeDescription: "Test agent for Jenkins"
+  #     numExecutors: 5
+  #     remoteFS: "/tmp/jenkins"
+  #     retentionStrategy: "always"
 
   securityRealm:
     local:
@@ -51,22 +51,22 @@ jenkins:
           - mailer:
               emailAddress: "abc@jenkins.com"
 
-  updateCenter:
-    sites:
-    - id: "default"
-      url: "https://updates.jenkins.io/update-center.json"
+  # updateCenter:
+  #   sites:
+  #   - id: "default"
+  #     url: "https://updates.jenkins.io/update-center.json"
 
-credentials:
-  system:
-    domainCredentials:
-    - credentials:
-      - usernamePassword:
-          description: "This is a cred for linux agent."
-          id: "linux-agent"
-          password: "test"
-          scope: GLOBAL
-          username: "root"
-          usernameSecret: true
+# credentials:
+#   system:
+#     domainCredentials:
+#     - credentials:
+#       - usernamePassword:
+#           description: "This is a cred for linux agent."
+#           id: "linux-agent"
+#           password: "test"
+#           scope: GLOBAL
+#           username: "root"
+#           usernameSecret: true
 
 security:
   scriptApproval:
