@@ -20,20 +20,20 @@ jenkins:
       - key: "ProductVersion"
         value: "1.1"
 
-  nodes:
-  - permanent:
-      labelString: "test-agent"
-      launcher:
-        ssh:
-          credentialsId: "linux-agent"
-          host: "test.agent.com"
-          port: 22
-          sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
-      name: "test"
-      nodeDescription: "Test agent for Jenkins"
-      numExecutors: 5
-      remoteFS: "/tmp/jenkins"
-      retentionStrategy: "always"
+  # nodes:
+  # - permanent:
+  #     labelString: "test-agent"
+  #     launcher:
+  #       ssh:
+  #         credentialsId: "linux-agent"
+  #         host: "test.agent.com"
+  #         port: 22
+  #         sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+  #     name: "test"
+  #     nodeDescription: "Test agent for Jenkins"
+  #     numExecutors: 5
+  #     remoteFS: "/tmp/jenkins"
+  #     retentionStrategy: "always"
 
   securityRealm:
     local:
