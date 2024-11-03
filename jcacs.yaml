@@ -1,18 +1,18 @@
 jenkins:
   systemMessage: "This is a test JCASC Server for more check the playlist https://www.youtube.com/playlist?list=PL1qKudIXSmxp5KkZMDm2-c_K8Q2QU3VPM"
 
-agentProtocols:
-  - "JNLP4-connect"
-  - "Ping"
-  authorizationStrategy:
-    roleBased:
-      roles:
-        global:
-        - entries:
-          - user: "vipin"
-          name: "admin"
-          permissions:
-          - "Overall/Administer"
+# agentProtocols:
+#   - "JNLP4-connect"
+#   - "Ping"
+#   authorizationStrategy:
+#     roleBased:
+#       roles:
+#         global:
+#         - entries:
+#           - user: "vipin"
+#           name: "admin"
+#           permissions:
+#           - "Overall/Administer"
 
   # globalNodeProperties:
   # - envVars:
@@ -68,28 +68,28 @@ securityRealm:
 #           username: "root"
 #           usernameSecret: true
 
-security:
-  scriptApproval:
-    approvedSignatures:
-    - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object\
-      \ java.lang.String java.lang.Object"
+# security:
+#   scriptApproval:
+#     approvedSignatures:
+#     - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object\
+#       \ java.lang.String java.lang.Object"
 
-unclassified:
-  globalLibraries:
-    libraries:
-    - defaultVersion: "master"
-      name: "test_library"
-      retriever:
-        modernSCM:
-          scm:
-            git:
-              remote: "https://github.com/lyfofvipin/jenkins_tutorials.git"
+# unclassified:
+#   globalLibraries:
+#     libraries:
+#     - defaultVersion: "master"
+#       name: "test_library"
+#       retriever:
+#         modernSCM:
+#           scm:
+#             git:
+#               remote: "https://github.com/lyfofvipin/jenkins_tutorials.git"
 
-tool:
-  git:
-    installations:
-    - home: "git"
-      name: "Default"
+# tool:
+#   git:
+#     installations:
+#     - home: "git"
+#       name: "Default"
 
-jobs:
-  - url: https://github.com/deepinder4/jenkins_tutorials/blob/main/seed_job.groovy
+# jobs:
+#   - url: https://github.com/deepinder4/jenkins_tutorials/blob/main/seed_job.groovy
