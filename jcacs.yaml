@@ -1,2 +1,95 @@
 jenkins:
   systemMessage: "This is a test JCASC Server for more check the playlist https://www.youtube.com/playlist?list=PL1qKudIXSmxp5KkZMDm2-c_K8Q2QU3VPM"
+
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+        - entries:
+          - user: "vipin"
+          name: "admin"
+          permissions:
+          - "Overall/Administer"
+
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: "ProductVersion"
+        value: "1.1"
+
+  nodes:
+  - permanent:
+      labelString: "test-agent"
+      launcher:
+        ssh:
+          credentialsId: "linux-agent"
+          host: "test.agent.com"
+          port: 22
+          sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+      name: "test"
+      nodeDescription: "Test agent for Jenkins"
+      numExecutors: 5
+      remoteFS: "/tmp/jenkins"
+      retentionStrategy: "always"
+
+  securityRealm:
+    local:
+      users:
+      - id: "test"
+        password: "test_jenkins"
+        name: "Test User"
+        properties:
+          - mailer:
+              emailAddress: "test@jenkins.com"
+      - id: "vipin"
+        password: "test_jenkins"
+        name: "Kumar Vipin Yadav"
+        properties:
+          - mailer:
+              emailAddress: "abc@jenkins.com"
+
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "This is a cred for linux agent."
+          id: "linux-agent"
+          password: "test"
+          scope: GLOBAL
+          username: "root"
+          usernameSecret: true
+
+security:
+  scriptApproval:
+    approvedSignatures:
+    - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object\
+      \ java.lang.String java.lang.Object"
+
+unclassified:
+  globalLibraries:
+    libraries:
+    - defaultVersion: "master"
+      name: "test_library"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              remote: "https://github.com/lyfofvipin/jenkins_tutorials.git"
+
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+
+jobs:
+  - url: https://github.com/deepinder4/jenkins_tutorials/blob/main/seed_job.groovy
