@@ -1,7 +1,7 @@
 jenkins:
   systemMessage: "This is a test JCASC Server for more check the playlist https://www.youtube.com/playlist?list=PL1qKudIXSmxp5KkZMDm2-c_K8Q2QU3VPM"
 
-  agentProtocols:
+agentProtocols:
   - "JNLP4-connect"
   - "Ping"
   authorizationStrategy:
@@ -35,7 +35,7 @@ jenkins:
   #     remoteFS: "/tmp/jenkins"
   #     retentionStrategy: "always"
 
-  securityRealm:
+securityRealm:
     local:
       users:
       - id: "test"
