@@ -35,21 +35,21 @@ jenkins:
   #     remoteFS: "/tmp/jenkins"
   #     retentionStrategy: "always"
 
-securityRealm:
-    local:
-      users:
-      - id: "test"
-        password: "test_jenkins"
-        name: "Test User"
-        properties:
-          - mailer:
-              emailAddress: "test@jenkins.com"
-      - id: "vipin"
-        password: "test_jenkins"
-        name: "Kumar Vipin Yadav"
-        properties:
-          - mailer:
-              emailAddress: "abc@jenkins.com"
+# securityRealm:
+#     local:
+#       users:
+#       - id: "test"
+#         password: "test_jenkins"
+#         name: "Test User"
+#         properties:
+#           - mailer:
+#               emailAddress: "test@jenkins.com"
+#       - id: "vipin"
+#         password: "test_jenkins"
+#         name: "Kumar Vipin Yadav"
+#         properties:
+#           - mailer:
+#               emailAddress: "abc@jenkins.com"
 
   # updateCenter:
   #   sites:
